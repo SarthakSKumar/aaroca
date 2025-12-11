@@ -1,0 +1,59 @@
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import { CATEGORIES } from "@/lib/constants";
+
+export function CategoryShowcase() {
+  return (
+    <section className="py-20 md:py-28">
+      <div className="container">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
+            Collections
+          </p>
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl">
+            Shop by Category
+          </h2>
+        </div>
+
+        {/* Category Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          {CATEGORIES.map((category, index) => (
+            <Link
+              key={category.id}
+              to={`/shop?category=${category.id}`}
+              className="group relative aspect-[3/4] overflow-hidden image-zoom"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              {/* Placeholder Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-secondary via-accent to-cream-dark">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-8xl font-serif text-foreground/5">{index + 1}</span>
+                </div>
+              </div>
+
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-500" />
+
+              {/* Content */}
+              <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+                <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                  <h3 className="font-serif text-xl md:text-2xl text-foreground mb-2">
+                    {category.name}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {category.description}
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-foreground">
+                    Explore
+                    <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
