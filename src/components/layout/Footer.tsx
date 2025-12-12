@@ -99,11 +99,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/shipping" className="hover:text-background transition-colors">
-                  Shipping & Returns
-                </Link>
-              </li>
-              <li>
                 <Link to="/faq" className="hover:text-background transition-colors">
                   FAQ
                 </Link>
@@ -134,16 +129,10 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-16 pt-8 border-t border-background/10 text-center">
           <p className="text-background/40 text-xs">
             © {new Date().getFullYear()} {BRAND.name}. All rights reserved.
           </p>
-          <div className="flex gap-6 text-xs text-background/40">
-            <span>Visa</span>
-            <span>Mastercard</span>
-            <span>PayPal</span>
-            <span>Apple Pay</span>
-          </div>
         </div>
       </div>
     </footer>
