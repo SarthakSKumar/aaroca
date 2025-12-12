@@ -1,0 +1,443 @@
+# OCRAN - Complete Website Content
+
+## HOMEPAGE
+
+### Hero Section Headlines (Rotating)
+1. **"Where Comfort Meets Desire"**  
+   *Discover intimate luxury crafted for the modern woman*
+
+2. **"Effortless Elegance, Intimate Comfort"**  
+   *Premium loungewear and lingerie designed to empower*
+
+3. **"Your Most Beautiful Moments Begin Here"**  
+   *Curated collections for every curve, every mood*
+
+### Homepage Introduction
+Ocran redefines intimate luxury through exceptional craftsmanship and timeless design. Each piece in our collection celebrates feminine confidence with premium fabrics, impeccable fit, and sophisticated details that move seamlessly from private moments to everyday elegance.
+
+---
+
+## ABOUT OCRAN
+
+### Our Story
+Founded on the belief that every woman deserves to feel extraordinary in her most intimate moments, Ocran represents the pinnacle of contemporary lingerie and loungewear design. Our name—derived from the warm, golden ochre that has symbolized luxury and refinement throughout history—reflects our commitment to creating pieces that enrich your daily ritual.
+
+### Our Philosophy
+We believe luxury is not just seen; it's felt. Every Ocran piece is thoughtfully designed to honor the female form with premium materials, meticulous construction, and designs that celebrate both comfort and sensuality. From our signature soft-cup bras to our sculptural harness lingerie, we create intimate apparel that empowers you to embrace every facet of yourself.
+
+### Our Craftsmanship
+- **15+ years** of intimate apparel expertise
+- **50,000+** satisfied customers worldwide
+- **Premium fabrics** sourced from European and Japanese mills
+- **Zero-compromise fit** developed through extensive testing
+- **Sustainable practices** in every stage of production
+
+### What Sets Us Apart
+**Exceptional Materials:** We source only the finest Italian laces, French microfibers, and Japanese technical fabrics that feel as luxurious as they look.
+
+**Inclusive Sizing:** Beauty knows no size. Our collections span from petite to plus, with detailed fit guides ensuring your perfect match.
+
+**Timeless Design:** Fashion fades; style is eternal. Our collections transcend trends, offering pieces you'll treasure for years.
+
+**Ethical Production:** We partner with certified facilities that uphold the highest standards for workers' rights and environmental responsibility.
+
+---
+
+## COLLECTIONS
+
+### Everyday Comfort Collection
+*Your daily essentials, elevated*
+
+Discover the foundation of sophisticated comfort. Our Everyday Collection features meticulously designed bras, panties, and period-proof intimates that move with you through your busiest days. Invisible under clothing yet unmistakably luxurious against your skin.
+
+**Featured Pieces:**
+- Seamless T-Shirt Bras
+- Wireless Comfort Bras
+- Classic Bikini & Hipster Panties
+- Period-Proof Underwear
+- Everyday Bralettes
+
+### Active & Sport Collection
+*Performance meets elegance*
+
+Reimagining athletic intimates for the woman who refuses to compromise on style. Our Sport Collection offers superior support and moisture-wicking technology wrapped in designs that transition effortlessly from studio to street.
+
+**Featured Pieces:**
+- High-Impact Sports Bras
+- Medium-Support Active Bras
+- Seamless Sports Underwear
+- Active Bodysuits
+
+### Lingerie & Shaping Collection
+*Sculptural beauty, sensual confidence*
+
+Our signature collection where artistry meets intimacy. From architectural harness designs to curve-enhancing bodysuits, these pieces are crafted for the woman who celebrates her femininity with boldness and grace.
+
+**Featured Pieces:**
+- Harness Lingerie Sets
+- Push-Up Thong Bodysuits
+- Lace Balconette Bras
+- High-Waist Shaping Briefs
+- Luxury Bodysuits
+- Silk & Lace Chemises
+
+### Loungewear Collection
+*Refined relaxation*
+
+Luxurious ease for your private moments. Soft modal sets, silk-blend robes, and effortlessly chic separates that blur the line between loungewear and ready-to-wear.
+
+**Featured Pieces:**
+- Modal Sleep Sets
+- Silk Robes & Kimonos
+- Cashmere-Blend Loungewear
+- Cozy Knit Separates
+
+---
+
+## PRODUCT PAGE TEMPLATE
+
+### [Product Name]
+
+**Price:** ₹[Amount]
+
+**Product Description:**
+[Example: The Ocran Signature Harness Bra combines architectural design with exceptional comfort. Crafted from Italian stretch microfiber with adjustable strappy details, this piece offers light support while creating a stunning silhouette. Perfect for layering under low-cut tops or wearing as a statement piece.]
+
+**Key Features:**
+- Premium [fabric type] from [origin]
+- [Specific features like underwire, padding, adjustable straps]
+- [Special design elements]
+- [Comfort features]
+
+**Fit & Style Notes:**
+- Runs true to size
+- [Specific fit characteristics]
+- [Styling suggestions]
+- [Care requirements]
+
+**Available Sizes:** XS | S | M | L | XL | XXL
+
+**Available Colors:** Black | Nude | Warm Gold | [Other colors]
+
+**Material Composition:**
+- [Percentage] [Material type]
+- [Additional materials]
+- Lining: [Material]
+
+**Care Instructions:**
+- Hand wash cold with like colors
+- Lay flat to dry
+- Do not bleach or iron
+- Store carefully to maintain shape
+
+**Delivery Information:**
+- Free shipping on orders over ₹2,500
+- Standard delivery: 5-7 business days
+- Express delivery: 2-3 business days (additional charge)
+- Easy returns within 30 days
+
+---
+
+## SIZE GUIDE
+
+### Bra Sizing Guide
+
+**How to Measure:**
+1. **Band Size:** Measure snugly around your ribcage, directly under your bust
+2. **Bust Size:** Measure around the fullest part of your bust
+3. **Calculate:** Subtract band measurement from bust measurement
+
+**Size Chart:**
+
+| Band Size (inches) | Cup Difference | Cup Size |
+|-------------------|----------------|----------|
+| 28-29 | 0-1" | AA/A |
+| 30-31 | 1-2" | A/B |
+| 32-33 | 2-3" | B/C |
+| 34-35 | 3-4" | C/D |
+| 36-37 | 4-5" | D/DD |
+| 38-39 | 5-6" | DD/E |
+
+### Panty Sizing Guide
+
+| Size | Waist (inches) | Hip (inches) |
+|------|---------------|--------------|
+| XS | 24-26 | 34-36 |
+| S | 27-29 | 37-39 |
+| M | 30-32 | 40-42 |
+| L | 33-35 | 43-45 |
+| XL | 36-38 | 46-48 |
+| XXL | 39-42 | 49-52 |
+
+**Still Unsure?** Contact our fit specialists at fit@ocran.com for personalized recommendations.
+
+---
+
+## FABRICS & MATERIALS
+
+### Our Fabric Philosophy
+At Ocran, we believe exceptional comfort begins with exceptional materials. Every fabric in our collection is carefully selected for its quality, performance, and luxurious feel.
+
+### Premium Materials We Use
+
+**Italian Microfiber**
+Silky-smooth, moisture-wicking, and incredibly durable. Our Italian microfiber feels weightless against skin while providing excellent shape retention.
+
+**French Lace**
+Delicate yet resilient, our French Leaver's lace adds romantic detail without sacrificing comfort. Each pattern is designed to lay flat and move with your body.
+
+**Modal & Bamboo Blends**
+Sustainably sourced, breathable, and softer than cotton. Perfect for everyday wear and sensitive skin.
+
+**Technical Mesh**
+Engineered for our Active Collection, this breathable fabric offers compression and support while keeping you cool.
+
+**Silk Blends**
+Temperature-regulating and hypoallergenic, our silk blends bring timeless luxury to loungewear and sleepwear.
+
+**Sustainable Practices**
+We prioritize OEKO-TEX certified fabrics, water-conscious dyeing processes, and partnerships with mills committed to environmental responsibility.
+
+---
+
+## FREQUENTLY ASKED QUESTIONS
+
+### Ordering & Shopping
+
+**Q: How do I find my perfect size?**
+A: Use our detailed Size Guide, which includes measurement instructions and fit notes for each collection. For personalized assistance, email fit@ocran.com with your measurements.
+
+**Q: Do you offer international shipping?**
+A: Currently, we ship within India. International shipping will be available soon—join our newsletter to be notified.
+
+**Q: What payment methods do you accept?**
+A: We accept all major credit/debit cards, UPI, net banking, and digital wallets including Paytm and Google Pay.
+
+**Q: Is my payment information secure?**
+A: Absolutely. We use bank-grade encryption and do not store your payment details.
+
+### Shipping & Delivery
+
+**Q: What are your shipping charges?**
+A: Free shipping on orders over ₹2,500. Orders under ₹2,500 incur a ₹150 shipping fee. Express delivery available for ₹300.
+
+**Q: How long does delivery take?**
+A: Standard delivery: 5-7 business days. Express delivery: 2-3 business days. Metro cities may receive orders faster.
+
+**Q: Do you ship to PO boxes?**
+A: Unfortunately, we cannot ship to PO boxes at this time.
+
+**Q: Can I track my order?**
+A: Yes! You'll receive a tracking number via email once your order ships.
+
+### Returns & Exchanges
+
+**Q: What is your return policy?**
+A: We offer 30-day returns on unworn, unwashed items with original tags attached. Lingerie and intimate items must be in hygienically sealed condition.
+
+**Q: How do I initiate a return?**
+A: Email returns@ocran.com with your order number. We'll provide a prepaid return label and instructions.
+
+**Q: When will I receive my refund?**
+A: Refunds are processed within 5-7 business days of receiving your return. The amount will be credited to your original payment method.
+
+**Q: Can I exchange for a different size?**
+A: Yes! We offer free size exchanges within 30 days. Contact us at fit@ocran.com to arrange.
+
+### Product Care
+
+**Q: How should I care for my Ocran pieces?**
+A: Hand wash in cold water with mild detergent. Lay flat to dry. Avoid bleach, fabric softeners, and high heat. Store bras fastened to maintain shape.
+
+**Q: Are your products suitable for sensitive skin?**
+A: Yes! We use hypoallergenic, OEKO-TEX certified fabrics. However, if you have specific allergies, check product descriptions or contact us.
+
+**Q: How long will my Ocran pieces last?**
+A: With proper care, our pieces are designed to maintain their quality for years. We stand behind our craftsmanship.
+
+### About Products
+
+**Q: Are your bras padded?**
+A: It varies by style. Product descriptions clearly indicate padding level (unpadded, lightly lined, or padded).
+
+**Q: Do you offer plus sizes?**
+A: Yes! Many of our collections extend to XXL, with band sizes up to 42 and cup sizes up to E.
+
+**Q: Are your period panties leak-proof?**
+A: Yes. Our period-proof underwear features four-layer protection tested for up to 12 hours of wear.
+
+**Q: Can I wear your lingerie as outerwear?**
+A: Absolutely! Many of our pieces—especially harness bras and bodysuits—are designed to be styled under sheer tops, blazers, or worn as statement pieces.
+
+### Sustainability
+
+**Q: Is Ocran sustainable?**
+A: We're committed to continuous improvement. We use OEKO-TEX certified fabrics, partner with ethical manufacturers, and minimize waste in our packaging.
+
+**Q: What is your packaging made from?**
+A: Our packaging uses recycled and recyclable materials. We've eliminated unnecessary plastics wherever possible.
+
+### Contact & Support
+
+**Q: How can I contact customer service?**
+A: Email us at hello@ocran.com, call +91-XXXX-XXXXXX (Mon-Sat, 10 AM - 6 PM IST), or use our contact form.
+
+**Q: Do you have physical stores?**
+A: We're currently online-only, allowing us to offer better prices and a wider selection.
+
+**Q: Can I schedule a virtual fitting consultation?**
+A: Yes! Book a complimentary 15-minute virtual fit consultation at fit@ocran.com.
+
+---
+
+## CONTACT US
+
+### Get In Touch
+
+**Customer Service**
+Email: hello@ocran.com  
+Phone: +91-XXXX-XXXXXX  
+Hours: Monday - Saturday, 10:00 AM - 6:00 PM IST
+
+**Fit Consultations**
+Email: fit@ocran.com  
+Book a virtual appointment for personalized sizing advice
+
+**Returns & Exchanges**
+Email: returns@ocran.com
+
+**Press & Partnerships**
+Email: press@ocran.com
+
+**Address**
+Ocran India Pvt. Ltd.  
+[Your Business Address]  
+[City, State - Postal Code]
+
+### Follow Our Journey
+
+**Instagram:** @ocran.in  
+*Daily inspiration, styling tips, and behind-the-scenes moments*
+
+**Pinterest:** @ocranlingerie  
+*Curate your perfect intimate wardrobe*
+
+**Facebook:** /ocranofficial  
+*Join our community of confident women*
+
+---
+
+## FOOTER CONTENT
+
+### Customer Care
+- Size Guide
+- Shipping & Delivery
+- Returns & Exchanges
+- FAQ
+- Contact Us
+- Fit Consultation
+
+### About Ocran
+- Our Story
+- Craftsmanship
+- Sustainability
+- Press
+- Careers
+
+### Shop
+- Everyday Comfort
+- Active & Sport
+- Lingerie & Shaping
+- Loungewear
+- New Arrivals
+- Sale
+
+### Legal
+- Terms & Conditions
+- Privacy Policy
+- Shipping Policy
+- Return Policy
+
+### Newsletter Signup
+**Receive Exclusive Previews**  
+*Be the first to discover new collections and enjoy special offers*
+
+[Email Input Field]  
+[Subscribe Button]
+
+---
+
+## TESTIMONIALS
+
+**"Finally, lingerie that looks as beautiful as it feels. The quality is exceptional."**  
+— Priya M., Mumbai
+
+**"I've never felt more confident. The fit is perfect, and the designs are stunning."**  
+— Anjali R., Bangalore
+
+**"Ocran has ruined me for other brands. Nothing else compares."**  
+— Kavya S., Delhi
+
+**"The most comfortable sports bra I own—and it looks incredible."**  
+— Neha K., Pune
+
+**"Luxury that's actually worth the investment. These pieces last."**  
+— Rhea D., Hyderabad
+
+---
+
+## INSTAGRAM CAPTIONS (Social Media Content)
+
+1. "Comfort so exquisite, you'll forget you're wearing it. ✨ #OcranEssentials"
+
+2. "Where architectural design meets everyday elegance. Introducing our Harness Collection. 🖤"
+
+3. "Your most beautiful moments begin here. Discover intimate luxury crafted for you."
+
+4. "Because every woman deserves to feel extraordinary—especially in private moments. 💫"
+
+5. "Redefining active wear, one sculptural sports bra at a time. #OcranActive"
+
+6. "Softness you can see. Quality you can feel. Confidence you can wear. #OcranLuxury"
+
+---
+
+## EMAIL NEWSLETTER TEMPLATE
+
+**Subject: Welcome to Ocran | Here's 10% Off Your First Order**
+
+Dear [Name],
+
+Welcome to the Ocran family.
+
+We're thrilled to have you join our community of women who refuse to compromise on comfort, quality, or style.
+
+As a thank you, enjoy **10% off your first order** with code: WELCOME10
+
+**Discover Your Collection:**
+→ Everyday Comfort | Invisible luxury for daily wear  
+→ Active & Sport | Performance meets elegance  
+→ Lingerie & Shaping | Sculptural beauty, sensual confidence  
+→ Loungewear | Refined relaxation
+
+Every Ocran piece is crafted with premium fabrics, thoughtful design, and an unwavering commitment to your comfort.
+
+**Not sure where to start?** Our bestsellers:
+- The Signature Harness Bra
+- Seamless T-Shirt Bra (Zero show-through)
+- Period-Proof Underwear
+- High-Impact Sports Bra
+
+[Shop Now Button]
+
+Questions? Reply to this email—we're here to help.
+
+With love,  
+The Ocran Team
+
+P.S. Follow us @ocran.in for daily styling inspiration and exclusive previews.
+
+---
+
+*This content represents the complete foundation for your Ocran website. Adjust specific details (pricing, contact information, addresses) to match your business specifics.*
+
