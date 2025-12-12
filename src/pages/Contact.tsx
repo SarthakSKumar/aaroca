@@ -188,14 +188,27 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
+              {/* Map */}
               <div className="mt-12">
-                <div className="aspect-[4/3] bg-gradient-to-br from-secondary via-cream-dark to-accent flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
-                    <p className="text-sm text-muted-foreground">Map View</p>
-                  </div>
+                <h3 className="text-xs tracking-widest uppercase text-muted-foreground mb-4">
+                  Visit Our Office
+                </h3>
+                <div className="aspect-[4/3] overflow-hidden border border-border">
+                  <iframe
+                    src={CONTACT_INFO.mapEmbedUrl}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Ocran Office Location - BTM Layout, Bengaluru"
+                    className="w-full h-full"
+                  />
                 </div>
+                <p className="text-xs text-muted-foreground mt-3">
+                  {CONTACT_INFO.address}
+                </p>
               </div>
             </div>
           </div>

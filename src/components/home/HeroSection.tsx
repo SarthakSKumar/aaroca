@@ -34,15 +34,17 @@ export function HeroSection() {
             index === currentSlide ? "opacity-100" : "opacity-0"
           )}
         >
-          {/* Placeholder Image - Elegant gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-cream-dark via-secondary to-accent">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-9xl font-serif text-foreground/5">{slide.id}</span>
-            </div>
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <img
+              src={slide.image}
+              alt={slide.title}
+              className="w-full h-full object-cover object-center"
+            />
           </div>
           
           {/* Overlay Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/20 to-transparent" />
           
           {/* Content */}
           <div className="absolute inset-0 flex items-end justify-center pb-24 md:pb-32">

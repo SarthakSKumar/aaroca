@@ -15,10 +15,12 @@ export function BrandStory() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image Side */}
           <div className="relative">
-            <div className="aspect-[4/5] bg-gradient-to-br from-secondary via-accent to-cream-dark relative overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-[200px] font-serif text-foreground/5">O</span>
-              </div>
+            <div className="aspect-[4/5] relative overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1591085686350-798c0f9faa7f?w=800&q=80"
+                alt="Ocran Brand Story - Luxury Loungewear"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
             {/* Floating Accent */}
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gold/10 hidden md:block" />
@@ -38,7 +40,7 @@ export function BrandStory() {
             <p className="text-muted-foreground leading-relaxed mb-10">
               Founded in {BRAND.founded}, OCRAN was born from a simple belief: that every woman 
               deserves to feel extraordinary in her most intimate moments. Our pieces are designed 
-              in New York and crafted using only the finest materials sourced from around the world.
+              in India and crafted using only the finest materials sourced from around the world.
             </p>
 
             {/* Stats */}

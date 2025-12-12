@@ -221,10 +221,12 @@ const Checkout = () => {
                         key={`${item.product.id}-${item.size}`}
                         className="flex gap-3"
                       >
-                        <div className="w-16 h-20 bg-gradient-to-br from-cream-dark to-secondary flex items-center justify-center shrink-0">
-                          <span className="text-2xl font-serif text-foreground/10">
-                            {item.product.name.charAt(0)}
-                          </span>
+                        <div className="w-16 h-20 shrink-0 overflow-hidden bg-secondary">
+                          <img
+                            src={item.product.images[0]}
+                            alt={item.product.name}
+                            className="w-full h-full object-cover"
+                          />
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-medium truncate">{item.product.name}</p>

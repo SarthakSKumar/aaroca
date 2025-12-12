@@ -14,7 +14,7 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50">
       <div className="container">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center h-16 md:h-20">
           {/* Mobile Menu Button */}
           <Button
             variant="ghost"
@@ -27,7 +27,7 @@ export function Header() {
           </Button>
 
           {/* Desktop Navigation - Left Aligned */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8 flex-1">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.name}
@@ -40,7 +40,7 @@ export function Header() {
           </nav>
 
           {/* Logo - Center */}
-          <Link to="/" className="absolute left-1/2 -translate-x-1/2">
+          <Link to="/" className="flex-shrink-0 lg:absolute lg:left-1/2 lg:-translate-x-1/2">
             <h1 className="font-serif text-2xl md:text-3xl tracking-[0.2em] font-medium">
               {BRAND.name}
             </h1>

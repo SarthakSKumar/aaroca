@@ -22,19 +22,19 @@ export const CATEGORIES = [
     id: "everyday-comfort",
     name: "Everyday Comfort",
     description: "Bras, Panties & Period Panties designed for all-day ease",
-    image: "https://images.unsplash.com/photo-1617331140180-e8262094733a?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1606902965551-dce093cda6e7?w=800&q=80",
   },
   {
     id: "active-sport",
     name: "Active & Sport",
     description: "Performance sports bras that move with you",
-    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1518459031867-a89b944bffe4?w=800&q=80",
   },
   {
     id: "lingerie-shaping",
     name: "Lingerie & Shaping",
     description: "Bodysuits, Harness Lingerie & Push-Up Thong Bodysuits",
-    image: "https://images.unsplash.com/photo-1616530940355-351fabd9524b?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1620799139507-2a76f79a2f4d?w=800&q=80",
   },
 ];
 
@@ -76,7 +76,7 @@ export const PRODUCTS: Product[] = [
     delivery: "Free shipping on orders over ₹2,500. Express delivery available.",
     rating: 4.8,
     reviewCount: 234,
-    images: ["https://images.unsplash.com/photo-1617331140180-e8262094733a?w=800&q=80"],
+    images: ["https://images.unsplash.com/photo-1606902965551-dce093cda6e7?w=800&q=80"],
     inStock: true,
   },
   {
@@ -114,7 +114,7 @@ export const PRODUCTS: Product[] = [
     delivery: "Discreet packaging. Free returns within 30 days.",
     rating: 4.9,
     reviewCount: 412,
-    images: ["https://images.unsplash.com/photo-1594223274512-ad4803739b7c?w=800&q=80"],
+    images: ["https://images.unsplash.com/photo-1617331140180-e8262094733a?w=800&q=80"],
     inStock: true,
   },
 
@@ -135,7 +135,7 @@ export const PRODUCTS: Product[] = [
     delivery: "Express shipping available. Arrives in 1-2 business days.",
     rating: 4.7,
     reviewCount: 156,
-    images: ["https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80"],
+    images: ["https://images.unsplash.com/photo-1518459031867-a89b944bffe4?w=800&q=80"],
     inStock: true,
   },
   {
@@ -154,7 +154,7 @@ export const PRODUCTS: Product[] = [
     delivery: "Free shipping on orders over ₹2,500.",
     rating: 4.5,
     reviewCount: 98,
-    images: ["https://images.unsplash.com/photo-1518459031867-a89b944bffe4?w=800&q=80"],
+    images: ["https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80"],
     inStock: true,
   },
   {
@@ -213,7 +213,7 @@ export const PRODUCTS: Product[] = [
     delivery: "Free expedited shipping on this item.",
     rating: 4.7,
     reviewCount: 145,
-    images: ["https://images.unsplash.com/photo-1608234808654-2a8875faa7fd?w=800&q=80"],
+    images: ["https://images.unsplash.com/photo-1571513722275-4b41940f54b8?w=800&q=80"],
     inStock: true,
   },
   {
@@ -232,7 +232,7 @@ export const PRODUCTS: Product[] = [
     delivery: "Complimentary gift wrapping available.",
     rating: 4.8,
     reviewCount: 112,
-    images: ["https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80"],
+    images: ["https://images.unsplash.com/photo-1591085686350-798c0f9faa7f?w=800&q=80"],
     inStock: true,
   },
 ];
@@ -242,21 +242,35 @@ export const TESTIMONIALS = [
     id: 1,
     name: "Priya M.",
     location: "Mumbai",
-    quote: "Finally, lingerie that looks as beautiful as it feels. The quality is exceptional.",
+    quote: "Finally, lingerie that looks as beautiful as it feels. The quality is exceptional, and I've never felt more confident.",
     rating: 5,
   },
   {
     id: 2,
     name: "Anjali R.",
     location: "Bangalore",
-    quote: "I've never felt more confident. The fit is perfect, and the designs are stunning.",
+    quote: "I've never felt more confident. The fit is perfect, and the designs are stunning. Worth every rupee.",
     rating: 5,
   },
   {
     id: 3,
     name: "Kavya S.",
     location: "Delhi",
-    quote: "Ocran has ruined me for other brands. Nothing else compares.",
+    quote: "Ocran has ruined me for other brands. Nothing else compares to the comfort and elegance.",
+    rating: 5,
+  },
+  {
+    id: 4,
+    name: "Neha K.",
+    location: "Pune",
+    quote: "The most comfortable sports bra I own—and it looks incredible. Perfect for my yoga sessions.",
+    rating: 5,
+  },
+  {
+    id: 5,
+    name: "Rhea D.",
+    location: "Hyderabad",
+    quote: "Luxury that's actually worth the investment. These pieces last and still look brand new after months.",
     rating: 5,
   },
 ];
@@ -288,7 +302,7 @@ export const SIZE_CHART = {
 export const CONTACT_INFO = {
   email: "hello@ocran.com",
   phone: "+91 98765 43210",
-  address: "BTM Layout, Bengaluru, Karnataka 560076, India",
+  address: "2nd Floor, Above Cafe Mocha, 27th Main Road, BTM Layout 2nd Stage, Bengaluru, Karnataka 560076, India",
   hours: "Monday - Saturday: 10 AM - 6 PM IST",
   social: {
     instagram: "https://instagram.com/ocran.in",
@@ -299,6 +313,7 @@ export const CONTACT_INFO = {
     lat: 12.9165,
     lng: 77.6101,
   },
+  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9264019449946!2d77.60756841482176!3d12.916499990886644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1497684d3a8d%3A0x2f82e4c7f89b0c86!2sBTM%20Layout%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1702396800000!5m2!1sen!2sin",
 };
 
 export const HERO_SLIDES = [
@@ -307,21 +322,21 @@ export const HERO_SLIDES = [
     title: "Where Comfort Meets Desire",
     subtitle: "Discover intimate luxury crafted for the modern woman",
     cta: "Shop Now",
-    image: "https://images.unsplash.com/photo-1615397349754-cfa2066a298e?w=1920&q=80",
+    image: "https://images.unsplash.com/photo-1616530940355-351fabd9524b?w=1920&q=80",
   },
   {
     id: 2,
     title: "Effortless Elegance",
     subtitle: "Premium loungewear and lingerie designed to empower",
     cta: "Discover",
-    image: "https://images.unsplash.com/photo-1617331140180-e8262094733a?w=1920&q=80",
+    image: "https://images.unsplash.com/photo-1620799139507-2a76f79a2f4d?w=1920&q=80",
   },
   {
     id: 3,
     title: "Your Most Beautiful Moments",
     subtitle: "Curated collections for every curve, every mood",
     cta: "Explore",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80",
+    image: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?w=1920&q=80",
   },
 ];
 

@@ -22,29 +22,31 @@ export function CategoryShowcase() {
             <Link
               key={category.id}
               to={`/shop?category=${category.id}`}
-              className="group relative aspect-[3/4] overflow-hidden image-zoom"
+              className="group relative aspect-[3/4] overflow-hidden"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              {/* Placeholder Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary via-accent to-cream-dark">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-8xl font-serif text-foreground/5">{index + 1}</span>
-                </div>
+              {/* Background Image */}
+              <div className="absolute inset-0">
+                <img
+                  src={category.image}
+                  alt={category.name}
+                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                />
               </div>
 
               {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-500" />
+              <div className="absolute inset-0 bg-foreground/20 group-hover:bg-foreground/40 transition-colors duration-500" />
 
               {/* Content */}
               <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
                 <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                  <h3 className="font-serif text-xl md:text-2xl text-foreground mb-2">
+                  <h3 className="font-serif text-xl md:text-2xl text-background mb-2">
                     {category.name}
                   </h3>
-                  <p className="text-sm text-muted-foreground mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-sm text-background/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {category.description}
                   </p>
-                  <span className="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-foreground">
+                  <span className="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-background">
                     Explore
                     <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
                   </span>

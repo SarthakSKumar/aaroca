@@ -45,7 +45,7 @@ export function Testimonials() {
 
         <div className="relative max-w-3xl mx-auto">
           {/* Testimonial Content */}
-          <div className="min-h-[200px] flex items-center justify-center">
+          <div className="h-[280px] md:h-[240px] flex items-center justify-center">
             {TESTIMONIALS.map((testimonial, index) => (
               <div
                 key={testimonial.id}
@@ -66,17 +66,19 @@ export function Testimonials() {
                 </div>
 
                 {/* Quote */}
-                <blockquote className="font-serif text-xl md:text-2xl lg:text-3xl italic mb-6 leading-relaxed">
+                <blockquote className="font-serif text-xl md:text-2xl lg:text-3xl italic mb-8 leading-relaxed">
                   "{testimonial.quote}"
                 </blockquote>
 
                 {/* Author */}
-                <p className="text-sm tracking-widest uppercase">
-                  {testimonial.name}
-                </p>
-                <p className="text-xs text-background/40 mt-1">
-                  {testimonial.location}
-                </p>
+                <div className="mt-auto">
+                  <p className="text-sm tracking-widest uppercase">
+                    {testimonial.name}
+                  </p>
+                  <p className="text-xs text-background/40 mt-1">
+                    {testimonial.location}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

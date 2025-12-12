@@ -48,10 +48,12 @@ const Cart = () => {
                   className="flex gap-4 p-4 bg-secondary/30 border border-border"
                 >
                   {/* Product Image */}
-                  <div className="w-24 h-32 bg-gradient-to-br from-cream-dark to-secondary flex items-center justify-center shrink-0">
-                    <span className="text-4xl font-serif text-foreground/10">
-                      {item.product.name.charAt(0)}
-                    </span>
+                  <div className="w-24 h-32 shrink-0 overflow-hidden bg-secondary">
+                    <img
+                      src={item.product.images[0]}
+                      alt={item.product.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
 
                   {/* Product Details */}

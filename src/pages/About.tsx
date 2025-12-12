@@ -51,10 +51,12 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Image */}
             <div className="relative">
-              <div className="aspect-[4/5] bg-gradient-to-br from-cream-dark via-secondary to-accent">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-[250px] font-serif text-foreground/5">O</span>
-                </div>
+              <div className="aspect-[4/5] overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1616530940355-351fabd9524b?w=800&q=80"
+                  alt="Ocran Brand - Luxury Intimate Apparel"
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
             </div>
 
@@ -65,7 +67,7 @@ const About = () => {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Founded in {BRAND.founded} in New York City, OCRAN emerged from a simple yet 
+                  Founded in {BRAND.founded} in Bengaluru, India, OCRAN emerged from a simple yet 
                   powerful vision: to create intimate apparel that makes every woman feel 
                   extraordinary in her most private moments.
                 </p>
@@ -76,7 +78,7 @@ const About = () => {
                   commitment—meticulously designed and crafted to perfection.
                 </p>
                 <p>
-                  Today, OCRAN serves over {BRAND.customers} women worldwide, each one part of 
+                  Today, OCRAN serves over {BRAND.customers} women across India, each one part of 
                   our growing community of women who refuse to settle for ordinary. Our pieces 
                   are worn in moments of quiet confidence, whether it's a peaceful morning at 
                   home or an evening of celebration.

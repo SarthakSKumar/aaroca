@@ -1,8 +1,15 @@
 import { Instagram } from "lucide-react";
 
-export function InstagramFeed() {
-  const posts = Array.from({ length: 6 }, (_, i) => i + 1);
+const instagramImages = [
+  "https://images.unsplash.com/photo-1616530940355-351fabd9524b?w=400&q=80",
+  "https://images.unsplash.com/photo-1606902965551-dce093cda6e7?w=400&q=80",
+  "https://images.unsplash.com/photo-1620799139507-2a76f79a2f4d?w=400&q=80",
+  "https://images.unsplash.com/photo-1591085686350-798c0f9faa7f?w=400&q=80",
+  "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?w=400&q=80",
+  "https://images.unsplash.com/photo-1518459031867-a89b944bffe4?w=400&q=80",
+];
 
+export function InstagramFeed() {
   return (
     <section className="py-20 md:py-28 bg-secondary/30">
       <div className="container">
@@ -11,12 +18,12 @@ export function InstagramFeed() {
           <div className="flex items-center justify-center gap-3 mb-4">
             <Instagram className="h-5 w-5" />
             <a 
-              href="https://instagram.com/ocran" 
+              href="https://instagram.com/ocran.in" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-xs tracking-[0.3em] uppercase hover:text-primary transition-colors"
             >
-              @ocran
+              @ocran.in
             </a>
           </div>
           <h2 className="font-serif text-3xl md:text-4xl">
@@ -26,20 +33,19 @@ export function InstagramFeed() {
 
         {/* Instagram Grid */}
         <div className="grid grid-cols-3 md:grid-cols-6 gap-2 md:gap-4">
-          {posts.map((post) => (
+          {instagramImages.map((image, index) => (
             <a
-              key={post}
-              href="https://instagram.com/ocran"
+              key={index}
+              href="https://instagram.com/ocran.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative aspect-square overflow-hidden image-zoom"
+              className="group relative aspect-square overflow-hidden"
             >
-              {/* Placeholder */}
-              <div className="absolute inset-0 bg-gradient-to-br from-cream-dark via-secondary to-accent">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-5xl font-serif text-foreground/5">{post}</span>
-                </div>
-              </div>
+              <img
+                src={image}
+                alt={`Ocran Instagram Post ${index + 1}`}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
 
               {/* Hover Overlay */}
               <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/40 transition-colors duration-300 flex items-center justify-center">
