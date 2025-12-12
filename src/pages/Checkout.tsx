@@ -57,6 +57,7 @@ const Checkout = () => {
   const navigate = useNavigate();
   const { items, totalPrice, clearCart } = useCart();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<FormErrors>({});
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -88,8 +89,69 @@ const Checkout = () => {
     );
   }
 
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+
+    if (!formData.firstName.trim()) {
+      newErrors.firstName = "First name is required";
+    } else if (formData.firstName.trim().length < 2) {
+      newErrors.firstName = "First name must be at least 2 characters";
+    }
+
+    if (!formData.lastName.trim()) {
+      newErrors.lastName = "Last name is required";
+    } else if (formData.lastName.trim().length < 2) {
+      newErrors.lastName = "Last name must be at least 2 characters";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    } else if (!/^[+]?[0-9\s-]{10,15}$/.test(formData.phone.replace(/\s/g, ""))) {
+      newErrors.phone = "Please enter a valid phone number";
+    }
+
+    if (!formData.address.trim()) {
+      newErrors.address = "Address is required";
+    } else if (formData.address.trim().length < 10) {
+      newErrors.address = "Please enter a complete address";
+    }
+
+    if (!formData.city.trim()) {
+      newErrors.city = "City is required";
+    }
+
+    if (!formData.state) {
+      newErrors.state = "Please select a state";
+    }
+
+    if (!formData.pincode.trim()) {
+      newErrors.pincode = "Pincode is required";
+    } else if (!/^[0-9]{6}$/.test(formData.pincode)) {
+      newErrors.pincode = "Please enter a valid 6-digit pincode";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      toast({
+        title: "Please fix the errors",
+        description: "Some required fields are missing or invalid.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     // Simulate API call
@@ -101,7 +163,12 @@ const Checkout = () => {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    // Clear error when user starts typing
+    if (errors[name as keyof FormErrors]) {
+      setErrors({ ...errors, [name]: undefined });
+    }
   };
 
   const shippingCost = totalPrice >= 2500 ? 0 : 150;
@@ -130,10 +197,10 @@ const Checkout = () => {
                         name="firstName"
                         value={formData.firstName}
                         onChange={handleChange}
-                        required
-                        className="w-full h-12 px-4 bg-secondary/50 border border-border text-sm focus:outline-none focus:border-foreground transition-colors"
+                        className={`w-full h-12 px-4 bg-secondary/50 border text-sm focus:outline-none transition-colors ${errors.firstName ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-foreground'}`}
                         placeholder="Enter your first name"
                       />
+                      {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>}
                     </div>
                     <div>
                       <label className="text-sm font-medium block mb-2">Last Name *</label>
@@ -142,10 +209,10 @@ const Checkout = () => {
                         name="lastName"
                         value={formData.lastName}
                         onChange={handleChange}
-                        required
-                        className="w-full h-12 px-4 bg-secondary/50 border border-border text-sm focus:outline-none focus:border-foreground transition-colors"
+                        className={`w-full h-12 px-4 bg-secondary/50 border text-sm focus:outline-none transition-colors ${errors.lastName ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-foreground'}`}
                         placeholder="Enter your last name"
                       />
+                      {errors.lastName && <p className="text-red-500 text-xs mt-1">{errors.lastName}</p>}
                     </div>
                     <div>
                       <label className="text-sm font-medium block mb-2">Email Address *</label>
@@ -154,10 +221,10 @@ const Checkout = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        required
-                        className="w-full h-12 px-4 bg-secondary/50 border border-border text-sm focus:outline-none focus:border-foreground transition-colors"
+                        className={`w-full h-12 px-4 bg-secondary/50 border text-sm focus:outline-none transition-colors ${errors.email ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-foreground'}`}
                         placeholder="your@email.com"
                       />
+                      {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
                     </div>
                     <div>
                       <label className="text-sm font-medium block mb-2">Phone Number *</label>
@@ -166,10 +233,10 @@ const Checkout = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        required
-                        className="w-full h-12 px-4 bg-secondary/50 border border-border text-sm focus:outline-none focus:border-foreground transition-colors"
+                        className={`w-full h-12 px-4 bg-secondary/50 border text-sm focus:outline-none transition-colors ${errors.phone ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-foreground'}`}
                         placeholder="+91 XXXXX XXXXX"
                       />
+                      {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
                     </div>
                   </div>
                 </div>
@@ -185,10 +252,10 @@ const Checkout = () => {
                         name="address"
                         value={formData.address}
                         onChange={handleChange}
-                        required
-                        className="w-full h-12 px-4 bg-secondary/50 border border-border text-sm focus:outline-none focus:border-foreground transition-colors"
+                        className={`w-full h-12 px-4 bg-secondary/50 border text-sm focus:outline-none transition-colors ${errors.address ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-foreground'}`}
                         placeholder="House/Flat No., Building, Street"
                       />
+                      {errors.address && <p className="text-red-500 text-xs mt-1">{errors.address}</p>}
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
@@ -198,22 +265,25 @@ const Checkout = () => {
                           name="city"
                           value={formData.city}
                           onChange={handleChange}
-                          required
-                          className="w-full h-12 px-4 bg-secondary/50 border border-border text-sm focus:outline-none focus:border-foreground transition-colors"
+                          className={`w-full h-12 px-4 bg-secondary/50 border text-sm focus:outline-none transition-colors ${errors.city ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-foreground'}`}
                           placeholder="City"
                         />
+                        {errors.city && <p className="text-red-500 text-xs mt-1">{errors.city}</p>}
                       </div>
                       <div>
                         <label className="text-sm font-medium block mb-2">State *</label>
-                        <input
-                          type="text"
+                        <select
                           name="state"
                           value={formData.state}
                           onChange={handleChange}
-                          required
-                          className="w-full h-12 px-4 bg-secondary/50 border border-border text-sm focus:outline-none focus:border-foreground transition-colors"
-                          placeholder="State"
-                        />
+                          className={`w-full h-12 px-4 bg-secondary/50 border text-sm focus:outline-none transition-colors ${errors.state ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-foreground'}`}
+                        >
+                          <option value="">Select State</option>
+                          {INDIAN_STATES.map((state) => (
+                            <option key={state} value={state}>{state}</option>
+                          ))}
+                        </select>
+                        {errors.state && <p className="text-red-500 text-xs mt-1">{errors.state}</p>}
                       </div>
                       <div>
                         <label className="text-sm font-medium block mb-2">Country *</label>
@@ -221,7 +291,6 @@ const Checkout = () => {
                           name="country"
                           value={formData.country}
                           onChange={handleChange}
-                          required
                           className="w-full h-12 px-4 bg-secondary/50 border border-border text-sm focus:outline-none focus:border-foreground transition-colors"
                         >
                           <option value="India">India</option>
@@ -234,11 +303,11 @@ const Checkout = () => {
                           name="pincode"
                           value={formData.pincode}
                           onChange={handleChange}
-                          required
-                          pattern="[0-9]{6}"
-                          className="w-full h-12 px-4 bg-secondary/50 border border-border text-sm focus:outline-none focus:border-foreground transition-colors"
+                          maxLength={6}
+                          className={`w-full h-12 px-4 bg-secondary/50 border text-sm focus:outline-none transition-colors ${errors.pincode ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-foreground'}`}
                           placeholder="6-digit pincode"
                         />
+                        {errors.pincode && <p className="text-red-500 text-xs mt-1">{errors.pincode}</p>}
                       </div>
                     </div>
                     <div>

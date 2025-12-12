@@ -48,13 +48,13 @@ const Cart = () => {
                   className="flex gap-4 p-4 bg-secondary/30 border border-border"
                 >
                   {/* Product Image */}
-                  <div className="w-24 h-32 shrink-0 overflow-hidden bg-secondary">
+                  <Link to={`/product/${item.product.id}`} className="w-28 h-36 shrink-0 overflow-hidden bg-secondary">
                     <img
                       src={item.product.images[0]}
                       alt={item.product.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />
-                  </div>
+                  </Link>
 
                   {/* Product Details */}
                   <div className="flex-1 min-w-0">
@@ -69,7 +69,15 @@ const Cart = () => {
                         >
                           {item.product.name}
                         </Link>
-                        <p className="text-sm text-muted-foreground mt-1">Size: {item.size}</p>
+                        <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-sm text-muted-foreground">
+                          <span>Size: <span className="text-foreground font-medium">{item.size}</span></span>
+                          {item.product.materials[0] && (
+                            <span className="hidden sm:inline">Material: <span className="text-foreground">{item.product.materials[0].split(' ').slice(-1)[0]}</span></span>
+                          )}
+                        </div>
+                        {item.product.discount > 0 && (
+                          <p className="text-xs text-gold mt-1">{item.product.discount}% off applied</p>
+                        )}
                       </div>
                       <button
                         onClick={() => removeFromCart(item.product.id, item.size)}
@@ -104,10 +112,15 @@ const Cart = () => {
 
                       {/* Price */}
                       <div className="text-right">
-                        <p className="font-medium">₹{(item.product.price * item.quantity).toLocaleString()}</p>
+                        <p className="font-medium text-lg">₹{(item.product.price * item.quantity).toLocaleString()}</p>
                         {item.quantity > 1 && (
                           <p className="text-xs text-muted-foreground">
                             ₹{item.product.price.toLocaleString()} each
+                          </p>
+                        )}
+                        {item.product.originalPrice > item.product.price && (
+                          <p className="text-xs text-muted-foreground line-through">
+                            ₹{(item.product.originalPrice * item.quantity).toLocaleString()}
                           </p>
                         )}
                       </div>

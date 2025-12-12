@@ -11,7 +11,9 @@ export function Testimonials() {
   };
 
   const prev = () => {
-    setCurrentIndex((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
+    setCurrentIndex(
+      (prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length
+    );
   };
 
   return (
@@ -20,8 +22,8 @@ export function Testimonials() {
         {/* Press Quotes */}
         <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-20 pb-20 border-b border-background/10">
           {PRESS_QUOTES.map((quote, index) => (
-            <div 
-              key={quote.publication} 
+            <div
+              key={quote.publication}
               className="text-center opacity-60 hover:opacity-100 transition-opacity"
               style={{ animationDelay: `${index * 100}ms` }}
             >
@@ -67,11 +69,11 @@ export function Testimonials() {
                 key={testimonial.id}
                 className={cn(
                   "absolute inset-0 flex flex-col items-center justify-center text-center transition-all duration-500",
-                  index === currentIndex 
-                    ? "opacity-100 translate-x-0 pointer-events-auto" 
-                    : index < currentIndex 
-                      ? "opacity-0 -translate-x-full pointer-events-none" 
-                      : "opacity-0 translate-x-full pointer-events-none"
+                  index === currentIndex
+                    ? "opacity-100 translate-x-0 pointer-events-auto"
+                    : index < currentIndex
+                    ? "opacity-0 -translate-x-full pointer-events-none"
+                    : "opacity-0 translate-x-full pointer-events-none"
                 )}
               >
                 {/* Stars */}
@@ -107,7 +109,9 @@ export function Testimonials() {
                 onClick={() => setCurrentIndex(index)}
                 className={cn(
                   "w-2 h-2 rounded-full transition-all duration-300",
-                  index === currentIndex ? "bg-background w-6" : "bg-background/30 hover:bg-background/50"
+                  index === currentIndex
+                    ? "bg-background w-6"
+                    : "bg-background/30 hover:bg-background/50"
                 )}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
@@ -116,7 +120,5 @@ export function Testimonials() {
         </div>
       </div>
     </section>
-  );
-}
   );
 }
