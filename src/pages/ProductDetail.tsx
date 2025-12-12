@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ChevronLeft, ChevronRight, Star, Minus, Plus, Heart, Truck, RotateCcw, Shield } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star, Minus, Plus, Truck, RotateCcw, Shield } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { PRODUCTS, SIZE_CHART } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useCart } from "@/hooks/useCart";
 import {
   Dialog,
   DialogContent,
@@ -27,6 +28,7 @@ const ProductDetail = () => {
   const [selectedSize, setSelectedSize] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const { addToCart } = useCart();
 
   if (!product) {
     return (
@@ -52,6 +54,7 @@ const ProductDetail = () => {
       });
       return;
     }
+    addToCart(product, selectedSize, quantity);
     toast({
       title: "Added to cart",
       description: `${product.name} (${selectedSize}) × ${quantity}`,
@@ -85,12 +88,12 @@ const ProductDetail = () => {
             {/* Image Gallery */}
             <div className="space-y-4">
               {/* Main Image */}
-              <div className="relative aspect-[3/4] bg-gradient-to-br from-cream-dark via-secondary to-accent overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-[200px] font-serif text-foreground/5">
-                    {product.name.charAt(0)}
-                  </span>
-                </div>
+              <div className="relative aspect-[3/4] overflow-hidden">
+                <img 
+                  src={product.images[currentImageIndex]} 
+                  alt={product.name}
+                  className="w-full h-full object-cover"
+                />
                 
                 {/* Discount Badge */}
                 {product.discount > 0 && (
@@ -98,11 +101,6 @@ const ProductDetail = () => {
                     -{product.discount}%
                   </div>
                 )}
-
-                {/* Wishlist Button */}
-                <button className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-background/80 hover:bg-background transition-colors">
-                  <Heart className="h-5 w-5" />
-                </button>
 
                 {/* Navigation Arrows */}
                 {product.images.length > 1 && (
@@ -122,26 +120,6 @@ const ProductDetail = () => {
                   </>
                 )}
               </div>
-
-              {/* Thumbnails */}
-              {product.images.length > 1 && (
-                <div className="flex gap-2">
-                  {product.images.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentImageIndex(index)}
-                      className={cn(
-                        "w-20 h-24 bg-secondary transition-opacity",
-                        currentImageIndex === index ? "opacity-100 ring-1 ring-foreground" : "opacity-60 hover:opacity-100"
-                      )}
-                    >
-                      <div className="w-full h-full flex items-center justify-center">
-                        <span className="text-2xl font-serif text-foreground/10">{index + 1}</span>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              )}
             </div>
 
             {/* Product Info */}
@@ -178,11 +156,11 @@ const ProductDetail = () => {
 
               {/* Price */}
               <div className="flex items-baseline gap-3 mb-6">
-                <span className="text-2xl font-medium">${product.price}</span>
+                <span className="text-2xl font-medium">₹{product.price.toLocaleString()}</span>
                 {product.originalPrice > product.price && (
                   <>
                     <span className="text-lg text-muted-foreground line-through">
-                      ${product.originalPrice}
+                      ₹{product.originalPrice.toLocaleString()}
                     </span>
                     <span className="px-2 py-0.5 bg-gold/10 text-gold text-xs font-medium">
                       Save {product.discount}%
@@ -295,17 +273,14 @@ const ProductDetail = () => {
               </div>
 
               {/* Add to Cart */}
-              <div className="flex gap-3 mb-8">
+              <div className="mb-8">
                 <Button
                   variant="luxury"
                   size="xl"
-                  className="flex-1"
+                  className="w-full"
                   onClick={handleAddToCart}
                 >
                   Add to Cart
-                </Button>
-                <Button variant="outline" size="xl" className="w-14">
-                  <Heart className="h-5 w-5" />
                 </Button>
               </div>
 
@@ -392,9 +367,9 @@ const ProductDetail = () => {
           {/* Sample Reviews */}
           <div className="max-w-2xl mx-auto space-y-8">
             {[
-              { name: "Emma S.", date: "November 2024", rating: 5, text: "Absolutely gorgeous piece! The quality is outstanding and it fits perfectly. Will definitely be ordering more." },
-              { name: "Sarah M.", date: "October 2024", rating: 5, text: "So comfortable and luxurious. Worth every penny. The packaging was beautiful too - felt like a real treat." },
-              { name: "Jessica L.", date: "October 2024", rating: 4, text: "Beautiful design and great quality. Runs slightly small, so I'd recommend sizing up if you're between sizes." },
+              { name: "Priya S.", date: "November 2024", rating: 5, text: "Absolutely gorgeous piece! The quality is outstanding and it fits perfectly. Will definitely be ordering more." },
+              { name: "Meera M.", date: "October 2024", rating: 5, text: "So comfortable and luxurious. Worth every penny. The packaging was beautiful too - felt like a real treat." },
+              { name: "Ananya L.", date: "October 2024", rating: 4, text: "Beautiful design and great quality. Runs slightly small, so I'd recommend sizing up if you're between sizes." },
             ].map((review, index) => (
               <div key={index} className="border-b border-border pb-8">
                 <div className="flex items-center gap-2 mb-2">
