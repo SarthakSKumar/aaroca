@@ -1,6 +1,15 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ChevronLeft, ChevronRight, Star, Minus, Plus, Truck, RotateCcw, Shield } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Star,
+  Minus,
+  Plus,
+  Truck,
+  RotateCcw,
+  Shield,
+} from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { PRODUCTS, SIZE_CHART } from "@/lib/constants";
@@ -65,16 +74,26 @@ const ProductDetail = () => {
   return (
     <main className="min-h-screen">
       <Header />
-      
+
       {/* Breadcrumb */}
       <div className="pt-24 pb-4 bg-secondary/30">
         <div className="container">
           <nav className="flex items-center gap-2 text-xs text-muted-foreground">
-            <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
+            <Link to="/" className="hover:text-foreground transition-colors">
+              Home
+            </Link>
             <span>/</span>
-            <Link to="/shop" className="hover:text-foreground transition-colors">Shop</Link>
+            <Link
+              to="/shop"
+              className="hover:text-foreground transition-colors"
+            >
+              Shop
+            </Link>
             <span>/</span>
-            <Link to={`/shop?category=${product.categoryId}`} className="hover:text-foreground transition-colors">
+            <Link
+              to={`/shop?category=${product.categoryId}`}
+              className="hover:text-foreground transition-colors"
+            >
               {product.category}
             </Link>
             <span>/</span>
@@ -90,12 +109,12 @@ const ProductDetail = () => {
             <div className="space-y-4">
               {/* Main Image */}
               <div className="relative aspect-[3/4] overflow-hidden">
-                <img 
-                  src={product.images[currentImageIndex]} 
+                <img
+                  src={product.images[currentImageIndex]}
                   alt={product.name}
                   className="w-full h-full object-cover"
                 />
-                
+
                 {/* Discount Badge */}
                 {product.discount > 0 && (
                   <div className="absolute top-4 left-4 px-3 py-1.5 bg-foreground text-background text-xs tracking-wider">
@@ -107,13 +126,23 @@ const ProductDetail = () => {
                 {product.images.length > 1 && (
                   <>
                     <button
-                      onClick={() => setCurrentImageIndex((prev) => (prev - 1 + product.images.length) % product.images.length)}
+                      onClick={() =>
+                        setCurrentImageIndex(
+                          (prev) =>
+                            (prev - 1 + product.images.length) %
+                            product.images.length
+                        )
+                      }
                       className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-background/80 hover:bg-background transition-colors"
                     >
                       <ChevronLeft className="h-5 w-5" />
                     </button>
                     <button
-                      onClick={() => setCurrentImageIndex((prev) => (prev + 1) % product.images.length)}
+                      onClick={() =>
+                        setCurrentImageIndex(
+                          (prev) => (prev + 1) % product.images.length
+                        )
+                      }
                       className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-background/80 hover:bg-background transition-colors"
                     >
                       <ChevronRight className="h-5 w-5" />
@@ -157,7 +186,9 @@ const ProductDetail = () => {
 
               {/* Price */}
               <div className="flex items-baseline gap-3 mb-6">
-                <span className="text-2xl font-medium">₹{product.price.toLocaleString()}</span>
+                <span className="text-2xl font-medium">
+                  ₹{product.price.toLocaleString()}
+                </span>
                 {product.originalPrice > product.price && (
                   <>
                     <span className="text-lg text-muted-foreground line-through">
@@ -187,10 +218,14 @@ const ProductDetail = () => {
                     </DialogTrigger>
                     <DialogContent className="max-w-2xl">
                       <DialogHeader>
-                        <DialogTitle className="font-serif text-2xl">Size Guide</DialogTitle>
+                        <DialogTitle className="font-serif text-2xl">
+                          Size Guide
+                        </DialogTitle>
                       </DialogHeader>
                       <div className="mt-4">
-                        <h4 className="text-sm font-medium mb-3">Bras & Tops (inches)</h4>
+                        <h4 className="text-sm font-medium mb-3">
+                          Bras & Tops (inches)
+                        </h4>
                         <table className="w-full text-sm mb-6">
                           <thead className="border-b">
                             <tr>
@@ -201,7 +236,10 @@ const ProductDetail = () => {
                           </thead>
                           <tbody>
                             {SIZE_CHART.bras.map((row) => (
-                              <tr key={row.size} className="border-b border-border/50">
+                              <tr
+                                key={row.size}
+                                className="border-b border-border/50"
+                              >
                                 <td className="py-2 font-medium">{row.size}</td>
                                 <td className="py-2">{row.bust}"</td>
                                 <td className="py-2">{row.band}"</td>
@@ -210,7 +248,9 @@ const ProductDetail = () => {
                           </tbody>
                         </table>
 
-                        <h4 className="text-sm font-medium mb-3">Bottoms (inches)</h4>
+                        <h4 className="text-sm font-medium mb-3">
+                          Bottoms (inches)
+                        </h4>
                         <table className="w-full text-sm">
                           <thead className="border-b">
                             <tr>
@@ -221,7 +261,10 @@ const ProductDetail = () => {
                           </thead>
                           <tbody>
                             {SIZE_CHART.bottoms.map((row) => (
-                              <tr key={row.size} className="border-b border-border/50">
+                              <tr
+                                key={row.size}
+                                className="border-b border-border/50"
+                              >
                                 <td className="py-2 font-medium">{row.size}</td>
                                 <td className="py-2">{row.waist}"</td>
                                 <td className="py-2">{row.hips}"</td>
@@ -293,24 +336,32 @@ const ProductDetail = () => {
                 </div>
                 <div className="text-center">
                   <RotateCcw className="h-5 w-5 mx-auto mb-2 text-muted-foreground" />
-                  <p className="text-xs text-muted-foreground">30-Day Returns</p>
+                  <p className="text-xs text-muted-foreground">
+                    30-Day Returns
+                  </p>
                 </div>
                 <div className="text-center">
                   <Shield className="h-5 w-5 mx-auto mb-2 text-muted-foreground" />
-                  <p className="text-xs text-muted-foreground">Secure Payment</p>
+                  <p className="text-xs text-muted-foreground">
+                    Secure Payment
+                  </p>
                 </div>
               </div>
 
               {/* Accordion Details */}
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="fit">
-                  <AccordionTrigger className="text-sm">Fit Notes</AccordionTrigger>
+                  <AccordionTrigger className="text-sm">
+                    Fit Notes
+                  </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
                     {product.fitNotes}
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="materials">
-                  <AccordionTrigger className="text-sm">Materials</AccordionTrigger>
+                  <AccordionTrigger className="text-sm">
+                    Materials
+                  </AccordionTrigger>
                   <AccordionContent>
                     <ul className="space-y-1 text-muted-foreground">
                       {product.materials.map((material, i) => (
@@ -320,7 +371,9 @@ const ProductDetail = () => {
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="care">
-                  <AccordionTrigger className="text-sm">Care Instructions</AccordionTrigger>
+                  <AccordionTrigger className="text-sm">
+                    Care Instructions
+                  </AccordionTrigger>
                   <AccordionContent>
                     <ul className="space-y-1 text-muted-foreground">
                       {product.care.map((instruction, i) => (
@@ -330,7 +383,9 @@ const ProductDetail = () => {
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="delivery">
-                  <AccordionTrigger className="text-sm">Delivery Information</AccordionTrigger>
+                  <AccordionTrigger className="text-sm">
+                    Delivery Information
+                  </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
                     {product.delivery}
                   </AccordionContent>
@@ -361,16 +416,33 @@ const ProductDetail = () => {
                 ))}
               </div>
               <span className="text-lg">{product.rating} out of 5</span>
-              <span className="text-muted-foreground">({product.reviewCount} reviews)</span>
+              <span className="text-muted-foreground">
+                ({product.reviewCount} reviews)
+              </span>
             </div>
           </div>
 
           {/* Sample Reviews */}
           <div className="max-w-2xl mx-auto space-y-8">
             {[
-              { name: "Priya S.", date: "November 2024", rating: 5, text: "Absolutely gorgeous piece! The quality is outstanding and it fits perfectly. Will definitely be ordering more." },
-              { name: "Meera M.", date: "October 2024", rating: 5, text: "So comfortable and luxurious. Worth every penny. The packaging was beautiful too - felt like a real treat." },
-              { name: "Ananya L.", date: "October 2024", rating: 4, text: "Beautiful design and great quality. Runs slightly small, so I'd recommend sizing up if you're between sizes." },
+              {
+                name: "Priya S.",
+                date: "November 2024",
+                rating: 5,
+                text: "Absolutely gorgeous piece! The quality is outstanding and it fits perfectly. Will definitely be ordering more.",
+              },
+              {
+                name: "Meera M.",
+                date: "October 2024",
+                rating: 5,
+                text: "So comfortable and luxurious. Worth every penny. The packaging was beautiful too - felt like a real treat.",
+              },
+              {
+                name: "Ananya L.",
+                date: "October 2024",
+                rating: 4,
+                text: "Beautiful design and great quality. Runs slightly small, so I'd recommend sizing up if you're between sizes.",
+              },
             ].map((review, index) => (
               <div key={index} className="border-b border-border pb-8">
                 <div className="flex items-center gap-2 mb-2">
@@ -379,7 +451,9 @@ const ProductDetail = () => {
                       key={i}
                       className={cn(
                         "h-4 w-4",
-                        i < review.rating ? "fill-gold text-gold" : "fill-none text-muted-foreground/30"
+                        i < review.rating
+                          ? "fill-gold text-gold"
+                          : "fill-none text-muted-foreground/30"
                       )}
                     />
                   ))}
@@ -387,7 +461,10 @@ const ProductDetail = () => {
                 <p className="text-muted-foreground mb-3">{review.text}</p>
                 <p className="text-sm">
                   <span className="font-medium">{review.name}</span>
-                  <span className="text-muted-foreground"> • {review.date}</span>
+                  <span className="text-muted-foreground">
+                    {" "}
+                    • {review.date}
+                  </span>
                 </p>
               </div>
             ))}
