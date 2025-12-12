@@ -44,13 +44,13 @@ const ProductDetail = () => {
       </main>
     );
   }
-
   const handleAddToCart = () => {
     if (!selectedSize) {
       toast({
         title: "Please select a size",
         description: "Choose your size before adding to cart.",
         variant: "destructive",
+        duration: 4000,
       });
       return;
     }
@@ -58,6 +58,7 @@ const ProductDetail = () => {
     toast({
       title: "Added to cart",
       description: `${product.name} (${selectedSize}) × ${quantity}`,
+      duration: 4000,
     });
   };
 
