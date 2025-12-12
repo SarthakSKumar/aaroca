@@ -308,6 +308,7 @@ export const CONTACT_INFO = {
     instagram: "https://instagram.com/ocran.in",
     pinterest: "https://pinterest.com/ocranlingerie",
     facebook: "https://facebook.com/ocranofficial",
+    linkedin: "https://linkedin.com/company/ocranofficial",
   },
   mapCoords: {
     lat: 12.9165,

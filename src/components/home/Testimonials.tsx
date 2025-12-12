@@ -43,19 +43,35 @@ export function Testimonials() {
           </h2>
         </div>
 
-        <div className="relative max-w-3xl mx-auto">
+        <div className="relative max-w-3xl mx-auto px-12 md:px-16">
+          {/* Navigation Arrows - Positioned outside content */}
+          <button
+            onClick={prev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center border border-background/20 hover:border-background/60 hover:bg-background/10 transition-all z-10"
+            aria-label="Previous testimonial"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+          <button
+            onClick={next}
+            className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center border border-background/20 hover:border-background/60 hover:bg-background/10 transition-all z-10"
+            aria-label="Next testimonial"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
+
           {/* Testimonial Content */}
-          <div className="h-[280px] md:h-[240px] flex items-center justify-center">
+          <div className="min-h-[320px] md:min-h-[280px] flex items-center justify-center relative">
             {TESTIMONIALS.map((testimonial, index) => (
               <div
                 key={testimonial.id}
                 className={cn(
-                  "absolute inset-0 flex flex-col items-center justify-center text-center transition-all duration-500 px-8",
+                  "absolute inset-0 flex flex-col items-center justify-center text-center transition-all duration-500",
                   index === currentIndex 
-                    ? "opacity-100 translate-x-0" 
+                    ? "opacity-100 translate-x-0 pointer-events-auto" 
                     : index < currentIndex 
-                      ? "opacity-0 -translate-x-full" 
-                      : "opacity-0 translate-x-full"
+                      ? "opacity-0 -translate-x-full pointer-events-none" 
+                      : "opacity-0 translate-x-full pointer-events-none"
                 )}
               >
                 {/* Stars */}
@@ -66,16 +82,16 @@ export function Testimonials() {
                 </div>
 
                 {/* Quote */}
-                <blockquote className="font-serif text-xl md:text-2xl lg:text-3xl italic mb-8 leading-relaxed">
+                <blockquote className="font-serif text-lg md:text-xl lg:text-2xl italic mb-8 leading-relaxed max-w-2xl">
                   "{testimonial.quote}"
                 </blockquote>
 
                 {/* Author */}
-                <div className="mt-auto">
-                  <p className="text-sm tracking-widest uppercase">
+                <div className="mt-auto pt-4">
+                  <p className="text-sm tracking-widest uppercase font-medium">
                     {testimonial.name}
                   </p>
-                  <p className="text-xs text-background/40 mt-1">
+                  <p className="text-xs text-background/50 mt-1">
                     {testimonial.location}
                   </p>
                 </div>
@@ -83,33 +99,15 @@ export function Testimonials() {
             ))}
           </div>
 
-          {/* Navigation */}
-          <div className="flex justify-center gap-4 mt-12">
-            <button
-              onClick={prev}
-              className="w-12 h-12 flex items-center justify-center border border-background/20 hover:border-background/40 transition-colors"
-              aria-label="Previous testimonial"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-            <button
-              onClick={next}
-              className="w-12 h-12 flex items-center justify-center border border-background/20 hover:border-background/40 transition-colors"
-              aria-label="Next testimonial"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </button>
-          </div>
-
           {/* Indicators */}
-          <div className="flex justify-center gap-2 mt-6">
+          <div className="flex justify-center gap-2 mt-8">
             {TESTIMONIALS.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={cn(
-                  "w-2 h-2 rounded-full transition-colors",
-                  index === currentIndex ? "bg-background" : "bg-background/30"
+                  "w-2 h-2 rounded-full transition-all duration-300",
+                  index === currentIndex ? "bg-background w-6" : "bg-background/30 hover:bg-background/50"
                 )}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
@@ -118,5 +116,7 @@ export function Testimonials() {
         </div>
       </div>
     </section>
+  );
+}
   );
 }

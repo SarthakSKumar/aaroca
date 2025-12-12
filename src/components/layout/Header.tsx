@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Search, ShoppingBag, Menu, X } from "lucide-react";
-import { NAV_LINKS, BRAND } from "@/lib/constants";
+import { NAV_LINKS, BRAND, PRODUCTS } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useCart } from "@/hooks/useCart";
@@ -9,7 +9,67 @@ import { useCart } from "@/hooks/useCart";
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState<typeof PRODUCTS>([]);
   const { totalItems } = useCart();
+  const navigate = useNavigate();
+  const searchRef = useRef<HTMLDivElement>(null);
+
+  // Close mobile menu on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isMenuOpen]);
+
+  // Close search dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setSearchResults([]);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Search functionality
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+    if (query.trim().length < 2) {
+      setSearchResults([]);
+      return;
+    }
+
+    const lowerQuery = query.toLowerCase();
+    const results = PRODUCTS.filter(
+      (product) =>
+        product.name.toLowerCase().includes(lowerQuery) ||
+        product.description.toLowerCase().includes(lowerQuery) ||
+        product.category.toLowerCase().includes(lowerQuery)
+    ).slice(0, 5);
+
+    setSearchResults(results);
+  };
+
+  const handleProductClick = (productId: string) => {
+    setSearchQuery("");
+    setSearchResults([]);
+    setIsSearchOpen(false);
+    navigate(`/product/${productId}`);
+  };
+
+  const handleLogoClick = () => {
+    if (window.location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50">
@@ -40,7 +100,11 @@ export function Header() {
           </nav>
 
           {/* Logo - Center */}
-          <Link to="/" className="flex-shrink-0 lg:absolute lg:left-1/2 lg:-translate-x-1/2">
+          <Link 
+            to="/" 
+            className="flex-shrink-0 lg:absolute lg:left-1/2 lg:-translate-x-1/2"
+            onClick={handleLogoClick}
+          >
             <h1 className="font-serif text-2xl md:text-3xl tracking-[0.2em] font-medium">
               {BRAND.name}
             </h1>
@@ -69,20 +133,61 @@ export function Header() {
           </div>
         </div>
 
-        {/* Search Bar */}
+        {/* Search Bar with Results */}
         <div
+          ref={searchRef}
           className={cn(
-            "overflow-hidden transition-all duration-300",
+            "overflow-visible transition-all duration-300 relative",
             isSearchOpen ? "h-14 opacity-100" : "h-0 opacity-0"
           )}
         >
           <div className="py-2">
             <input
               type="text"
-              placeholder="Search collections..."
+              placeholder="Search products..."
+              value={searchQuery}
+              onChange={(e) => handleSearch(e.target.value)}
               className="w-full h-10 px-4 bg-secondary border-none text-sm tracking-wide placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50"
             />
           </div>
+
+          {/* Search Results Dropdown */}
+          {searchResults.length > 0 && (
+            <div className="absolute top-full left-0 right-0 bg-background border border-border shadow-lg z-50 max-h-[400px] overflow-y-auto">
+              {searchResults.map((product) => (
+                <button
+                  key={product.id}
+                  onClick={() => handleProductClick(product.id)}
+                  className="w-full flex items-center gap-4 p-3 hover:bg-secondary/50 transition-colors text-left"
+                >
+                  <div className="w-14 h-18 shrink-0 overflow-hidden bg-secondary">
+                    <img
+                      src={product.images[0]}
+                      alt={product.name}
+                      className="w-full h-full object-cover"
+                      onContextMenu={(e) => e.preventDefault()}
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs text-muted-foreground uppercase tracking-wide">
+                      {product.category}
+                    </p>
+                    <p className="font-serif text-sm truncate">{product.name}</p>
+                    <p className="text-sm text-muted-foreground">
+                      ₹{product.price.toLocaleString()}
+                    </p>
+                  </div>
+                </button>
+              ))}
+            </div>
+          )}
+
+          {/* No Results */}
+          {searchQuery.trim().length >= 2 && searchResults.length === 0 && (
+            <div className="absolute top-full left-0 right-0 bg-background border border-border shadow-lg z-50 p-4 text-center text-muted-foreground text-sm">
+              No products found for "{searchQuery}"
+            </div>
+          )}
         </div>
       </div>
 
