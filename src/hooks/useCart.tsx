@@ -1,4 +1,10 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from "react";
 import { Product } from "@/lib/constants";
 
 export interface CartItem {
@@ -21,12 +27,12 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>(() => {
-    const saved = localStorage.getItem("ocran-cart");
+    const saved = localStorage.getItem("arroca-cart");
     return saved ? JSON.parse(saved) : [];
   });
 
   useEffect(() => {
-    localStorage.setItem("ocran-cart", JSON.stringify(items));
+    localStorage.setItem("arroca-cart", JSON.stringify(items));
   }, [items]);
 
   const addToCart = (product: Product, size: string, quantity: number) => {
@@ -47,11 +53,17 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const removeFromCart = (productId: string, size: string) => {
     setItems((prev) =>
-      prev.filter((item) => !(item.product.id === productId && item.size === size))
+      prev.filter(
+        (item) => !(item.product.id === productId && item.size === size)
+      )
     );
   };
 
-  const updateQuantity = (productId: string, size: string, quantity: number) => {
+  const updateQuantity = (
+    productId: string,
+    size: string,
+    quantity: number
+  ) => {
     if (quantity <= 0) {
       removeFromCart(productId, size);
       return;
