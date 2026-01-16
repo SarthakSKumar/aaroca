@@ -8,7 +8,11 @@ import { Ruler, CircleDot, Info } from "lucide-react";
 const SizeGuide = () => {
   const [bandSize, setBandSize] = useState("");
   const [bustSize, setBustSize] = useState("");
-  const [calculatedSize, setCalculatedSize] = useState<{ band: string; cup: string; sister: string[] } | null>(null);
+  const [calculatedSize, setCalculatedSize] = useState<{
+    band: string;
+    cup: string;
+    sister: string[];
+  } | null>(null);
 
   const calculateBraSize = () => {
     const band = parseFloat(bandSize);
@@ -36,7 +40,7 @@ const SizeGuide = () => {
     const cupOrder = ["AA", "A", "B", "C", "D", "DD", "E", "F"];
     const cupIndex = cupOrder.indexOf(cupSize);
     const sisterSizes = [];
-    
+
     if (cupIndex > 0 && roundedBand < 42) {
       sisterSizes.push(`${roundedBand + 2}${cupOrder[cupIndex - 1]}`);
     }
@@ -44,7 +48,11 @@ const SizeGuide = () => {
       sisterSizes.push(`${roundedBand - 2}${cupOrder[cupIndex + 1]}`);
     }
 
-    setCalculatedSize({ band: roundedBand.toString(), cup: cupSize, sister: sisterSizes });
+    setCalculatedSize({
+      band: roundedBand.toString(),
+      cup: cupSize,
+      sister: sisterSizes,
+    });
   };
 
   return (
@@ -59,8 +67,8 @@ const SizeGuide = () => {
           </p>
           <h1 className="font-serif text-4xl md:text-5xl mb-6">Size Guide</h1>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            Finding your perfect fit is the key to comfort and confidence. Follow our comprehensive guide
-            to discover your ideal size.
+            Finding your perfect fit is the key to comfort and confidence.
+            Follow our comprehensive guide to discover your ideal size.
           </p>
         </div>
       </section>
@@ -76,8 +84,13 @@ const SizeGuide = () => {
               </h3>
               <ul className="text-sm text-muted-foreground space-y-2">
                 <li>• Use a soft, flexible measuring tape (not a metal one)</li>
-                <li>• Wear an unpadded bra or no bra for the most accurate measurements</li>
-                <li>• Stand in front of a mirror to ensure the tape is level</li>
+                <li>
+                  • Wear an unpadded bra or no bra for the most accurate
+                  measurements
+                </li>
+                <li>
+                  • Stand in front of a mirror to ensure the tape is level
+                </li>
                 <li>• Take measurements in inches for best results</li>
                 <li>• Measure 2-3 times to ensure accuracy</li>
               </ul>
@@ -85,8 +98,10 @@ const SizeGuide = () => {
 
             {/* How to Measure */}
             <div className="mb-16">
-              <h2 className="font-serif text-2xl md:text-3xl mb-8 text-center">How to Measure</h2>
-              
+              <h2 className="font-serif text-2xl md:text-3xl mb-8 text-center">
+                How to Measure
+              </h2>
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Band Measurement */}
                 <div className="bg-secondary/30 p-8 border border-border">
@@ -94,23 +109,42 @@ const SizeGuide = () => {
                     <Ruler className="h-6 w-6 text-gold" />
                   </div>
                   <h3 className="font-serif text-xl mb-2">Step 1: Band Size</h3>
-                  <p className="text-xs text-gold uppercase tracking-wider mb-4">Underbust Measurement</p>
+                  <p className="text-xs text-gold uppercase tracking-wider mb-4">
+                    Underbust Measurement
+                  </p>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                    Stand up straight and wrap a soft measuring tape snugly around your ribcage, directly under your bust. 
-                    The tape should be level all the way around and lie flat against your skin.
+                    Stand up straight and wrap a soft measuring tape snugly
+                    around your ribcage, directly under your bust. The tape
+                    should be level all the way around and lie flat against your
+                    skin.
                   </p>
                   <div className="space-y-3 text-sm text-muted-foreground">
                     <div className="flex items-start gap-2">
-                      <span className="w-5 h-5 rounded-full bg-gold/20 text-gold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
-                      <span>Keep the tape snug but comfortable—you should be able to fit one finger underneath</span>
+                      <span className="w-5 h-5 rounded-full bg-gold/20 text-gold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                        1
+                      </span>
+                      <span>
+                        Keep the tape snug but comfortable—you should be able to
+                        fit one finger underneath
+                      </span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <span className="w-5 h-5 rounded-full bg-gold/20 text-gold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
-                      <span>Make sure the tape is parallel to the floor and doesn't ride up your back</span>
+                      <span className="w-5 h-5 rounded-full bg-gold/20 text-gold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                        2
+                      </span>
+                      <span>
+                        Make sure the tape is parallel to the floor and doesn't
+                        ride up your back
+                      </span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <span className="w-5 h-5 rounded-full bg-gold/20 text-gold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
-                      <span>Round to the nearest whole number (if odd, round up to the next even number)</span>
+                      <span className="w-5 h-5 rounded-full bg-gold/20 text-gold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                        3
+                      </span>
+                      <span>
+                        Round to the nearest whole number (if odd, round up to
+                        the next even number)
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -121,22 +155,38 @@ const SizeGuide = () => {
                     <CircleDot className="h-6 w-6 text-gold" />
                   </div>
                   <h3 className="font-serif text-xl mb-2">Step 2: Bust Size</h3>
-                  <p className="text-xs text-gold uppercase tracking-wider mb-4">Fullest Point Measurement</p>
+                  <p className="text-xs text-gold uppercase tracking-wider mb-4">
+                    Fullest Point Measurement
+                  </p>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                    Keeping the tape around your back at band level, measure around the fullest part of your bust. 
-                    Don't pull too tight—the tape should rest gently on the skin without compressing breast tissue.
+                    Keeping the tape around your back at band level, measure
+                    around the fullest part of your bust. Don't pull too
+                    tight—the tape should rest gently on the skin without
+                    compressing breast tissue.
                   </p>
                   <div className="space-y-3 text-sm text-muted-foreground">
                     <div className="flex items-start gap-2">
-                      <span className="w-5 h-5 rounded-full bg-gold/20 text-gold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
-                      <span>Stand with arms relaxed at your sides in a natural position</span>
+                      <span className="w-5 h-5 rounded-full bg-gold/20 text-gold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                        1
+                      </span>
+                      <span>
+                        Stand with arms relaxed at your sides in a natural
+                        position
+                      </span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <span className="w-5 h-5 rounded-full bg-gold/20 text-gold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
-                      <span>Measure at the fullest part of your bust (usually at nipple level)</span>
+                      <span className="w-5 h-5 rounded-full bg-gold/20 text-gold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                        2
+                      </span>
+                      <span>
+                        Measure at the fullest part of your bust (usually at
+                        nipple level)
+                      </span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <span className="w-5 h-5 rounded-full bg-gold/20 text-gold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
+                      <span className="w-5 h-5 rounded-full bg-gold/20 text-gold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                        3
+                      </span>
                       <span>Round to the nearest whole number</span>
                     </div>
                   </div>
@@ -146,8 +196,8 @@ const SizeGuide = () => {
               <div className="mt-8 p-6 bg-gold/5 border border-gold/20">
                 <h4 className="font-medium mb-3">Calculate Your Cup Size</h4>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Subtract your band measurement from your bust measurement. The difference determines 
-                  your cup size:
+                  Subtract your band measurement from your bust measurement. The
+                  difference determines your cup size:
                 </p>
                 <div className="grid grid-cols-4 md:grid-cols-8 gap-2 text-center text-sm">
                   <div className="bg-background p-2">
@@ -188,7 +238,9 @@ const SizeGuide = () => {
 
             {/* Bra Size Calculator */}
             <div className="mb-16 bg-secondary/30 p-8 border border-border">
-              <h2 className="font-serif text-2xl mb-6 text-center">Bra Size Calculator</h2>
+              <h2 className="font-serif text-2xl mb-6 text-center">
+                Bra Size Calculator
+              </h2>
               <p className="text-muted-foreground text-center mb-8 max-w-md mx-auto">
                 Enter your measurements in inches to find your recommended size.
               </p>
@@ -196,7 +248,9 @@ const SizeGuide = () => {
               <div className="max-w-md mx-auto">
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div>
-                    <label className="text-sm font-medium block mb-2">Band Size (inches)</label>
+                    <label className="text-sm font-medium block mb-2">
+                      Band Size (inches)
+                    </label>
                     <input
                       type="number"
                       step="0.5"
@@ -207,7 +261,9 @@ const SizeGuide = () => {
                     />
                   </div>
                   <div>
-                    <label className="text-sm font-medium block mb-2">Bust Size (inches)</label>
+                    <label className="text-sm font-medium block mb-2">
+                      Bust Size (inches)
+                    </label>
                     <input
                       type="number"
                       step="0.5"
@@ -230,22 +286,30 @@ const SizeGuide = () => {
 
                 {calculatedSize && (
                   <div className="mt-6 p-6 bg-gold/10 text-center">
-                    <p className="text-sm text-muted-foreground mb-2">Your Recommended Size</p>
+                    <p className="text-sm text-muted-foreground mb-2">
+                      Your Recommended Size
+                    </p>
                     <p className="font-serif text-4xl text-gold mb-4">
-                      {calculatedSize.band}{calculatedSize.cup}
+                      {calculatedSize.band}
+                      {calculatedSize.cup}
                     </p>
                     {calculatedSize.sister.length > 0 && (
                       <div className="mt-4 pt-4 border-t border-gold/20">
-                        <p className="text-xs text-muted-foreground mb-2">Sister Sizes to Try</p>
+                        <p className="text-xs text-muted-foreground mb-2">
+                          Sister Sizes to Try
+                        </p>
                         <div className="flex justify-center gap-4">
                           {calculatedSize.sister.map((size) => (
-                            <span key={size} className="text-sm font-medium">{size}</span>
+                            <span key={size} className="text-sm font-medium">
+                              {size}
+                            </span>
                           ))}
                         </div>
                       </div>
                     )}
                     <p className="text-xs text-muted-foreground mt-4">
-                      This is an estimate. We recommend trying on for the perfect fit.
+                      This is an estimate. We recommend trying on for the
+                      perfect fit.
                     </p>
                   </div>
                 )}
@@ -256,22 +320,32 @@ const SizeGuide = () => {
             <div className="space-y-12">
               {/* Bra Size Chart */}
               <div>
-                <h2 className="font-serif text-2xl mb-6">Bra & Top Size Chart</h2>
+                <h2 className="font-serif text-2xl mb-6">
+                  Bra & Top Size Chart
+                </h2>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead className="border-b border-foreground">
                       <tr>
                         <th className="text-left py-3 font-medium">Size</th>
-                        <th className="text-left py-3 font-medium">Bust (inches)</th>
-                        <th className="text-left py-3 font-medium">Band (inches)</th>
+                        <th className="text-left py-3 font-medium">
+                          Bust (inches)
+                        </th>
+                        <th className="text-left py-3 font-medium">
+                          Band (inches)
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
                       {SIZE_CHART.bras.map((row) => (
                         <tr key={row.size} className="border-b border-border">
                           <td className="py-4 font-medium">{row.size}</td>
-                          <td className="py-4 text-muted-foreground">{row.bust}</td>
-                          <td className="py-4 text-muted-foreground">{row.band}</td>
+                          <td className="py-4 text-muted-foreground">
+                            {row.bust}
+                          </td>
+                          <td className="py-4 text-muted-foreground">
+                            {row.band}
+                          </td>
                         </tr>
                       ))}
                     </tbody>
@@ -281,22 +355,32 @@ const SizeGuide = () => {
 
               {/* Panty Size Chart */}
               <div>
-                <h2 className="font-serif text-2xl mb-6">Panty & Bottom Size Chart</h2>
+                <h2 className="font-serif text-2xl mb-6">
+                  Panty & Bottom Size Chart
+                </h2>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead className="border-b border-foreground">
                       <tr>
                         <th className="text-left py-3 font-medium">Size</th>
-                        <th className="text-left py-3 font-medium">Waist (inches)</th>
-                        <th className="text-left py-3 font-medium">Hips (inches)</th>
+                        <th className="text-left py-3 font-medium">
+                          Waist (inches)
+                        </th>
+                        <th className="text-left py-3 font-medium">
+                          Hips (inches)
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
                       {SIZE_CHART.bottoms.map((row) => (
                         <tr key={row.size} className="border-b border-border">
                           <td className="py-4 font-medium">{row.size}</td>
-                          <td className="py-4 text-muted-foreground">{row.waist}</td>
-                          <td className="py-4 text-muted-foreground">{row.hips}</td>
+                          <td className="py-4 text-muted-foreground">
+                            {row.waist}
+                          </td>
+                          <td className="py-4 text-muted-foreground">
+                            {row.hips}
+                          </td>
                         </tr>
                       ))}
                     </tbody>
@@ -309,10 +393,14 @@ const SizeGuide = () => {
             <div className="mt-16 text-center p-8 bg-foreground text-background">
               <h3 className="font-serif text-xl mb-4">Still Unsure?</h3>
               <p className="text-background/70 mb-6">
-                Our fit specialists are here to help. Contact us for personalized sizing recommendations.
+                Our fit specialists are here to help. Contact us for
+                personalized sizing recommendations.
               </p>
-              <a href="mailto:fit@ocran.com">
-                <Button variant="luxury-outline" className="border-background text-background hover:bg-background hover:text-foreground">
+              <a href="mailto:fit@arroca.com">
+                <Button
+                  variant="luxury-outline"
+                  className="border-background text-background hover:bg-background hover:text-foreground"
+                >
                   Contact Fit Specialist
                 </Button>
               </a>

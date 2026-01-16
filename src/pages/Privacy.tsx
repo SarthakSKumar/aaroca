@@ -17,7 +17,7 @@ const Privacy = () => {
 
             <div className="prose prose-neutral max-w-none space-y-8">
               <p className="text-muted-foreground leading-relaxed">
-                Ocran ("we", "us", "our") respects your privacy and is committed to protecting your personal data. 
+                Arroca ("we", "us", "our") respects your privacy and is committed to protecting your personal data. 
                 This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you 
                 use our website.
               </p>
@@ -88,7 +88,7 @@ const Privacy = () => {
               <div>
                 <h2 className="font-serif text-xl mb-4">7. Your Rights</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  You have the right to access, correct, or delete your personal data. Contact us at hello@ocran.com 
+                  You have the right to access, correct, or delete your personal data. Contact us at hello@arroca.com 
                   to exercise these rights.
                 </p>
               </div>
@@ -103,7 +103,7 @@ const Privacy = () => {
               <div>
                 <h2 className="font-serif text-xl mb-4">Contact Us</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  If you have questions about this Privacy Policy, please contact us at hello@ocran.com
+                  If you have questions about this Privacy Policy, please contact us at hello@arroca.com
                 </p>
               </div>
             </div>
