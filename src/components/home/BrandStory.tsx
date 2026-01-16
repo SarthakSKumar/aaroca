@@ -18,7 +18,7 @@ export function BrandStory() {
             <div className="aspect-[4/5] relative overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1591085686350-798c0f9faa7f?w=800&q=80"
-                alt="Ocran Brand Story - Luxury Loungewear"
+                alt="Arroca Brand Story - Luxury Loungewear"
                 className="w-full h-full object-cover object-center"
               />
             </div>
@@ -38,9 +38,10 @@ export function BrandStory() {
               {BRAND.description}
             </p>
             <p className="text-muted-foreground leading-relaxed mb-10">
-              Founded in {BRAND.founded}, OCRAN was born from a simple belief: that every woman 
-              deserves to feel extraordinary in her most intimate moments. Our pieces are designed 
-              in India and crafted using only the finest materials sourced from around the world.
+              Founded in {BRAND.founded}, ARROCA was born from a simple belief:
+              that every woman deserves to feel extraordinary in her most
+              intimate moments. Our pieces are designed in India and crafted
+              using only the finest materials sourced from around the world.
             </p>
 
             {/* Stats */}
