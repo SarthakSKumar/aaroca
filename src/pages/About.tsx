@@ -8,26 +8,30 @@ const About = () => {
   const values = [
     {
       title: "Exceptional Quality",
-      description: "Every piece is crafted from the finest materials sourced globally, ensuring lasting luxury and comfort."
+      description:
+        "Every piece is crafted from the finest materials sourced globally, ensuring lasting luxury and comfort.",
     },
     {
       title: "Timeless Design",
-      description: "Our designs transcend trends, offering elegant silhouettes that remain relevant season after season."
+      description:
+        "Our designs transcend trends, offering elegant silhouettes that remain relevant season after season.",
     },
     {
       title: "Sustainable Practice",
-      description: "We're committed to ethical production and sustainable materials, respecting both people and planet."
+      description:
+        "We're committed to ethical production and sustainable materials, respecting both people and planet.",
     },
     {
       title: "Perfect Fit",
-      description: "Extensive research and testing ensure every garment flatters and supports the female form."
+      description:
+        "Extensive research and testing ensure every garment flatters and supports the female form.",
     },
   ];
 
   return (
     <main className="min-h-screen">
       <Header />
-      
+
       {/* Hero */}
       <section className="pt-32 pb-20 md:pb-28">
         <div className="container">
@@ -54,7 +58,7 @@ const About = () => {
               <div className="aspect-[4/5] overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1616530940355-351fabd9524b?w=800&q=80"
-                  alt="Ocran Brand - Luxury Intimate Apparel"
+                  alt="Arroca Brand - Luxury Intimate Apparel"
                   className="w-full h-full object-cover object-center"
                 />
               </div>
@@ -67,37 +71,52 @@ const About = () => {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Founded in {BRAND.founded} in Bengaluru, India, OCRAN emerged from a simple yet 
-                  powerful vision: to create intimate apparel that makes every woman feel 
-                  extraordinary in her most private moments.
+                  Founded in {BRAND.founded} in Bengaluru, India, ARROCA emerged
+                  from a simple yet powerful vision: to create intimate apparel
+                  that makes every woman feel extraordinary in her most private
+                  moments.
                 </p>
                 <p>
-                  Our founder, inspired by the timeless elegance of European ateliers and the 
-                  modern woman's need for comfort without compromise, set out to redefine 
-                  luxury loungewear. Every piece in our collection is a testament to this 
+                  Our founder, inspired by the timeless elegance of European
+                  ateliers and the modern woman's need for comfort without
+                  compromise, set out to redefine luxury loungewear. Every piece
+                  in our collection is a testament to this
                   commitment—meticulously designed and crafted to perfection.
                 </p>
                 <p>
-                  Today, OCRAN serves over {BRAND.customers} women across India, each one part of 
-                  our growing community of women who refuse to settle for ordinary. Our pieces 
-                  are worn in moments of quiet confidence, whether it's a peaceful morning at 
-                  home or an evening of celebration.
+                  Today, ARROCA serves over {BRAND.customers} women across
+                  India, each one part of our growing community of women who
+                  refuse to settle for ordinary. Our pieces are worn in moments
+                  of quiet confidence, whether it's a peaceful morning at home
+                  or an evening of celebration.
                 </p>
               </div>
 
               {/* Stats */}
               <div className="grid grid-cols-3 gap-6 mt-10 pt-10 border-t border-border">
                 <div>
-                  <p className="font-serif text-3xl text-gold mb-1">{BRAND.experience}</p>
-                  <p className="text-xs text-muted-foreground tracking-wide uppercase">Years</p>
+                  <p className="font-serif text-3xl text-gold mb-1">
+                    {BRAND.experience}
+                  </p>
+                  <p className="text-xs text-muted-foreground tracking-wide uppercase">
+                    Years
+                  </p>
                 </div>
                 <div>
-                  <p className="font-serif text-3xl text-gold mb-1">{BRAND.customers}</p>
-                  <p className="text-xs text-muted-foreground tracking-wide uppercase">Customers</p>
+                  <p className="font-serif text-3xl text-gold mb-1">
+                    {BRAND.customers}
+                  </p>
+                  <p className="text-xs text-muted-foreground tracking-wide uppercase">
+                    Customers
+                  </p>
                 </div>
                 <div>
-                  <p className="font-serif text-3xl text-gold mb-1">{BRAND.collections}</p>
-                  <p className="text-xs text-muted-foreground tracking-wide uppercase">Collections</p>
+                  <p className="font-serif text-3xl text-gold mb-1">
+                    {BRAND.collections}
+                  </p>
+                  <p className="text-xs text-muted-foreground tracking-wide uppercase">
+                    Collections
+                  </p>
                 </div>
               </div>
             </div>
@@ -119,10 +138,14 @@ const About = () => {
             {values.map((value, index) => (
               <div key={index} className="text-center">
                 <div className="w-16 h-16 mx-auto mb-6 border border-border flex items-center justify-center">
-                  <span className="font-serif text-2xl text-gold">{index + 1}</span>
+                  <span className="font-serif text-2xl text-gold">
+                    {index + 1}
+                  </span>
                 </div>
                 <h3 className="font-serif text-xl mb-3">{value.title}</h3>
-                <p className="text-sm text-muted-foreground">{value.description}</p>
+                <p className="text-sm text-muted-foreground">
+                  {value.description}
+                </p>
               </div>
             ))}
           </div>
@@ -142,7 +165,9 @@ const About = () => {
           <div className="flex flex-wrap justify-center gap-12 md:gap-20">
             {PRESS_QUOTES.map((quote, index) => (
               <div key={index} className="text-center max-w-xs">
-                <p className="font-serif text-xl italic mb-4">"{quote.quote}"</p>
+                <p className="font-serif text-xl italic mb-4">
+                  "{quote.quote}"
+                </p>
                 <p className="text-xs tracking-widest uppercase text-background/40">
                   — {quote.publication}
                 </p>
@@ -174,7 +199,9 @@ const About = () => {
                   "{testimonial.quote}"
                 </blockquote>
                 <p className="text-sm font-medium">{testimonial.name}</p>
-                <p className="text-xs text-muted-foreground">{testimonial.location}</p>
+                <p className="text-xs text-muted-foreground">
+                  {testimonial.location}
+                </p>
               </div>
             ))}
           </div>
