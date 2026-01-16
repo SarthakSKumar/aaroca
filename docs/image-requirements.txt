@@ -1,4 +1,4 @@
-Ocran Luxe Atelier Website - Image Requirements Report
+Arroca Luxe Atelier Website - Image Requirements Report
 ------------------------------------------------------
 
 This report lists all image usages across the website, with context, section, type, and size requirements. Use this to provide your content manager with a clear brief for sourcing or creating final images.
@@ -91,4 +91,4 @@ General Notes:
 - Prefer original/editorial/lifestyle shots where possible.
 - Maintain a soft, neutral, or gold-accented color palette.
 
-This list covers all major image requirements for the Ocran Luxe Atelier website as of Dec 2025.
+This list covers all major image requirements for the Arroca Luxe Atelier website as of Dec 2025.
