@@ -14,7 +14,7 @@ const FAQ = () => {
       questions: [
         {
           q: "How do I find my perfect size?",
-          a: "Use our detailed Size Guide, which includes measurement instructions and fit notes for each collection. For personalized assistance, email fit@ocran.com with your measurements.",
+          a: "Use our detailed Size Guide, which includes measurement instructions and fit notes for each collection. For personalized assistance, email fit@arroca.com with your measurements.",
         },
         {
           q: "Do you offer international shipping?",
@@ -56,7 +56,7 @@ const FAQ = () => {
         },
         {
           q: "How do I initiate a return?",
-          a: "Email returns@ocran.com with your order number. We'll provide a prepaid return label and instructions.",
+          a: "Email returns@arroca.com with your order number. We'll provide a prepaid return label and instructions.",
         },
         {
           q: "When will I receive my refund?",
@@ -64,7 +64,7 @@ const FAQ = () => {
         },
         {
           q: "Can I exchange for a different size?",
-          a: "Yes! We offer free size exchanges within 30 days. Contact us at fit@ocran.com to arrange.",
+          a: "Yes! We offer free size exchanges within 30 days. Contact us at fit@arroca.com to arrange.",
         },
       ],
     },
@@ -72,7 +72,7 @@ const FAQ = () => {
       title: "Product Care",
       questions: [
         {
-          q: "How should I care for my Ocran pieces?",
+          q: "How should I care for my Arroca pieces?",
           a: "Hand wash in cold water with mild detergent. Lay flat to dry. Avoid bleach, fabric softeners, and high heat. Store bras fastened to maintain shape.",
         },
         {
@@ -80,7 +80,7 @@ const FAQ = () => {
           a: "Yes! We use hypoallergenic, OEKO-TEX certified fabrics. However, if you have specific allergies, check product descriptions or contact us.",
         },
         {
-          q: "How long will my Ocran pieces last?",
+          q: "How long will my Arroca pieces last?",
           a: "With proper care, our pieces are designed to maintain their quality for years. We stand behind our craftsmanship.",
         },
       ],
@@ -157,8 +157,8 @@ const FAQ = () => {
               Our customer service team is here to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center text-sm">
-              <a href="mailto:hello@ocran.com" className="hover:text-gold transition-colors">
-                hello@ocran.com
+              <a href="mailto:hello@arroca.com" className="hover:text-gold transition-colors">
+                hello@arroca.com
               </a>
               <span className="hidden sm:inline text-background/40">|</span>
               <a href="tel:+919876543210" className="hover:text-gold transition-colors">
